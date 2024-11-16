@@ -1,0 +1,42 @@
+{
+  "name": "multas_app_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint . --ext .ts --report-unused-disable-directives",
+    "lint:fix": "eslint --fix . --ext .ts --report-unused-disable-directives",
+    "sanity": "npm run lint && npm run format:check",
+    "sanity:fix": "npm run lint:fix && npm run format:fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "env-var": "^7.5.0",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2"
+  }
+}

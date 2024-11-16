@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    /* Target and Module */
+    "target": "ES2020",                              /* Latest JavaScript features supported. */
+    "module": "CommonJS",                            /* CommonJS is standard for Node.js. */
+    "lib": ["ES2020"],                               /* No DOM-related libraries. */
+    "moduleResolution": "node",                     /* Standard resolution for Node.js. */
+    "outDir": "./dist",                              /* Output directory for compiled files. */
+    "rootDir": "./",                              /* Root directory for source files. */
+    "skipLibCheck": true,                            /* Skip type-checking of declaration files. */
+
+    /* TypeScript Features */
+    "strict": true,                                  /* Enable all strict type-checking options. */
+    "resolveJsonModule": true,                       /* Enable importing JSON files. */
+    "esModuleInterop": true,                         /* Enable compatibility with CommonJS modules. */
+    "forceConsistentCasingInFileNames": true,        /* Ensure case sensitivity in file imports. */
+    "allowSyntheticDefaultImports": true,            /* Enable default import compatibility. */
+
+    /* Linting */
+    "noUnusedLocals": true,                          /* Error on unused variables. */
+    "noUnusedParameters": true,                      /* Error on unused function parameters. */
+    "noFallthroughCasesInSwitch": true,              /* Prevent unintended switch fallthrough. */
+    "noImplicitReturns": true,                       /* Ensure all code paths return a value. */
+
+    /* Paths and Aliases */
+    "baseUrl": ".",                                  /* Base directory for resolving non-relative imports. */
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    /* Emit Settings */
+    "isolatedModules": true,                         /* Ensure safe transpilation of each module. */
+    "noEmit": false,                                 /* Emit compiled files. */
+    "removeComments": true,                          /* Remove comments in output files. */
+
+    /* Incremental Compilation */
+    "incremental": true                              /* Enable incremental compilation. */
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.json"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "**/*.spec.ts"
+  ]
+}
+
