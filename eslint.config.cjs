@@ -5,7 +5,7 @@ const prettierPlugin = require('eslint-plugin-prettier');
 
 module.exports = [
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts'],
     ignores: ['node_modules/**', 'dist/**'],
 
     languageOptions: {
@@ -29,7 +29,7 @@ module.exports = [
     },
 
     rules: {
-      // Reglas generales de TypeScript
+      // Reglas de TypeScript
       '@typescript-eslint/no-unused-vars': [
         'warn',
         { argsIgnorePattern: '^_' },

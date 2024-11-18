@@ -1,6 +1,6 @@
 {
   "name": "multas_app_backend",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
@@ -8,16 +8,20 @@
     "build": "tsc",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
-    "lint": "eslint . --ext .ts --report-unused-disable-directives",
-    "lint:fix": "eslint --fix . --ext .ts --report-unused-disable-directives",
+    "lint": "eslint . --report-unused-disable-directives",
+    "lint:fix": "eslint --fix src --report-unused-disable-directives",
     "sanity": "npm run lint && npm run format:check",
-    "sanity:fix": "npm run lint:fix && npm run format:fix"
+    "sanity:fix": "npm run lint:fix && npm run format:fix",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^6.4.16",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "env-var": "^7.5.0",
@@ -33,7 +37,9 @@
     "@typescript-eslint/parser": "^8.14.0",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
