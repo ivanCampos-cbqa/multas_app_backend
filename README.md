@@ -1,38 +1,40 @@
-# 📸 multas_app - Backend  
+# 📸 multas_app - Backend
 
-This repository contains the backend of **multas_app**, an application designed for the management of traffic fines through photo enforcement. It aims to streamline the handling of fines by providing modern tools for data management and notifications.  
+This repository contains the backend of **multas_app**, an application designed for the management of traffic fines through photo enforcement. It aims to streamline the handling of fines by providing modern tools for data management and notifications.
 
-## 🚀 Technologies Used  
+## 🚀 Technologies Used
 
-The backend is developed using the following technologies:  
-- **Node.js**: JavaScript runtime environment.  
-- **Express**: Web framework for creating fast and robust APIs.  
-- **MongoDB**: NoSQL database for storing fine-related information.  
-- **Mongoose**: Library for modeling data in MongoDB.  
-- **Nodemailer**: Tool for sending email notifications.  
+The backend is developed using the following technologies:
 
-## 📚 Key Features  
+- **Node.js**: JavaScript runtime environment.
+- **Express**: Web framework for creating fast and robust APIs.
+- **MongoDB**: NoSQL database for storing fine-related information.
+- **Mongoose**: Library for modeling data in MongoDB.
+- **Nodemailer**: Tool for sending email notifications.
 
-- Registration and management of traffic fines.   
-- Email notifications for violations and deadlines.  
-- Checking the fines by date, by plate number, and displaying them in a map. 
+## 📚 Key Features
 
-## 👥 Development Team  
+- Registration and management of traffic fines.
+- Email notifications for violations and deadlines.
+- Checking the fines by date, by plate number, and displaying them in a map.
 
-The development of **multas_app** has been made possible thanks to the efforts of:  
+## 👥 Development Team
 
-- 👩‍💻 **Ashli Acosta Martínez**  
-- 👩‍💻 **Bianka Saray Juárez Sánchez**  
-- 👨‍💻 **Saul Iván Campos Solís**  
-- 👨‍💻 **Juan Alberto Jaramillo Gutierrez**  
-- 👨‍💻 **Diego Alejandro Juárez Maldonado**  
-- 👨‍💻 **Pedro Razo Flores**  
-- 👨‍💻 **Marcos Uriel Resendiz Medina**  
+The development of **multas_app** has been made possible thanks to the efforts of:
 
-## 🛠️ Installation and Execution  
+- 👩‍💻 **Ashli Acosta Martínez**
+- 👩‍💻 **Bianka Saray Juárez Sánchez**
+- 👨‍💻 **Saul Iván Campos Solís**
+- 👨‍💻 **Juan Alberto Jaramillo Gutierrez**
+- 👨‍💻 **Diego Alejandro Juárez Maldonado**
+- 👨‍💻 **Pedro Razo Flores**
+- 👨‍💻 **Marcos Uriel Resendiz Medina**
 
-Follow these steps to set up and run the **multas_app** backend:  
+## 🛠️ Installation and Execution
 
-1. Clone this repository:  
+Follow these steps to set up and run the **multas_app** backend:
+
+1. Clone this repository:
    ```bash
    git clone https://github.com/your_user/multas_app-backend.git
+   ```
