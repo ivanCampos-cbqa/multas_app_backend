@@ -48,9 +48,6 @@ module.exports = [
         },
       ],
 
-      // Prettier
-      'prettier/prettier': ['error'],
-
       // Reglas generales
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-param-reassign': 'error',
