@@ -36,5 +36,5 @@ Follow these steps to set up and run the **multas_app** backend:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your_user/multas_app-backend.git
+   git clone https://github.com/ivanCampos-cbqa/multas_app_backend
    ```
