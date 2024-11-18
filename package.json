@@ -9,9 +9,10 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "eslint . --report-unused-disable-directives",
-    "lint:fix": "eslint --fix . --report-unused-disable-directives",
+    "lint:fix": "eslint --fix src --report-unused-disable-directives",
     "sanity": "npm run lint && npm run format:check",
-    "sanity:fix": "npm run lint:fix && npm run format:fix"
+    "sanity:fix": "npm run lint:fix && npm run format:fix",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +39,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
