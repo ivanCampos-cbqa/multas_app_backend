@@ -7,6 +7,8 @@ export class FineRoutes{
     static get routes(): Router {
         const router = Router();
         const controller = new FineController();
+        router.get("/", controller.getFines)
+        router.post("/", controller.createFine);
         
         return router;
 
