@@ -9,6 +9,7 @@ export class FineRoutes{
         const controller = new FineController();
         router.get("/", controller.getFines)
         router.post("/", controller.createFine);
+        router.put("/:id", controller.updateFine);
         
         return router;
 
