@@ -17,7 +17,7 @@ export class FineController {
 
   public createFine = async (req: Request, res: Response): Promise<any> => {
     try {
-      const { plate, city, state, speed, limit, lat, lng } = req.body;
+      const { plate, city, state, speed, limit, lat, lng, email } = req.body;
       const newFine = await FineModel.create({
         plate,
         city,
@@ -26,6 +26,7 @@ export class FineController {
         limit,
         lat,
         lng,
+        email,
       });
       return res.json(newFine);
     } catch (error) {
@@ -41,7 +42,7 @@ export class FineController {
         return res.json({ message: "Please provide a valid id" });
       }
 
-      const { plate, city, state, speed, limit, lat, lng } = req.body;
+      const { plate, city, state, speed, limit, lat, lng, email } = req.body;
       await FineModel.findByIdAndUpdate(id, {
         plate,
         city,
@@ -50,6 +51,7 @@ export class FineController {
         limit,
         lat,
         lng,
+        email,
       });
 
       const updateFine = await FineModel.findById(id);
