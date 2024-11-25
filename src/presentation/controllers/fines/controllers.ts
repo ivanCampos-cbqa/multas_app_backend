@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { FineModel } from "../../../data/models/fine.model";
+import mongoose from "mongoose";
 
 export class FineController {
   public getFines = async (req: Request, res: Response): Promise<any> => {
@@ -35,6 +36,11 @@ export class FineController {
   public updateFine = async (req: Request, res: Response): Promise<any> => {
     try {
       const { id } = req.params;
+
+      if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.json({ message: "Please provide a valid id" });
+      }
+
       const { plate, city, state, speed, limit, lat, lng } = req.body;
       await FineModel.findByIdAndUpdate(id, {
         plate,
@@ -59,9 +65,8 @@ export class FineController {
     req: Request,
     res: Response
   ): Promise<any> => {
-    const plateNumber = req.params.plateNumber;
-
     try {
+      const plateNumber = req.params.plateNumber;
       const fines = await FineModel.find({ plate: plateNumber });
 
       if (fines.length < 1)
@@ -73,6 +78,29 @@ export class FineController {
     } catch (error) {
       return res.json({
         message: "An error occurred while searching for fines.",
+      });
+    }
+  };
+
+  public getFineById = async (req: Request, res: Response): Promise<any> => {
+    try {
+      const id = req.params.id;
+
+      if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.json({ message: "Please provide a valid id" });
+      }
+
+      const fine = await FineModel.findById(id);
+
+      if (!fine)
+        return res.json({
+          message: `Couldn't find a fine with the id ${id}`,
+        });
+
+      return res.json(fine);
+    } catch (error) {
+      return res.json({
+        message: "An error occurred while searching for the requested fine.",
       });
     }
   };
