@@ -16,6 +16,6 @@ app.use(AppRoutes.routes);
 })();
 
 app.listen(envs.PORT, () => {
-  console.log("Server started")
+  console.log(`Server listening on port ${envs.PORT}`);
   
 })
