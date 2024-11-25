@@ -1,6 +1,6 @@
 {
   "name": "multas_app_backend",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "index.js",
 "scripts": {
     "dev": "nodemon src/app.ts",
