@@ -43,6 +43,15 @@ const fineSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  email: {
+    type: String,
+    required: true,
+    lowercase: true,
+    match: [
+      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+      "Please provide a valid email address",
+    ],
+  }
 });
 
 export const FineModel = mongoose.model('Fine', fineSchema);
