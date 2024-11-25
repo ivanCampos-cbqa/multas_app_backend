@@ -6,7 +6,7 @@ services:
     container_name: mongo-multas-app
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: N0wIctb]|03
+      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - '27018:27017'
     volumes:
