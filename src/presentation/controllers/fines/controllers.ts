@@ -104,4 +104,30 @@ export class FineController {
       });
     }
   };
+
+  public deleteFineById = async (req: Request, res: Response): Promise<any> => {
+    try {
+      const id = req.params.id;
+
+      if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.json({ message: "Please provide a valid id" });
+      }
+
+      const fineToDelete = await FineModel.findById(id);
+
+      if (!fineToDelete)
+        return res.json({
+          message: `Couldn't find a fine with the id ${id}`,
+        });
+
+      await FineModel.deleteOne({ _id: id });
+      return res.json({
+        message: `Fine with id: ${id} was deleted succesfuly`,
+      });
+    } catch (error) {
+      return res.json({
+        message: "An error occurred while trying to delet the specified fine.",
+      });
+    }
+  };
 }
