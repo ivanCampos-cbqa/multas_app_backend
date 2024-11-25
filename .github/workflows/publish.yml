@@ -1,0 +1,27 @@
+name: Docker build & Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
+
+      - name: Build Docker Image
+        run: docker build -t iscampoos/multas-app-api:${{ github.sha }} .
+
+      - name: Tag Latest
+        run: docker tag iscampoos/multas-app-api:${{ github.sha }} iscampoos/multas-app-api:latest
+
+      - name: Push Docker Image
+        run: |
+          docker push iscampoos/multas-app-api:${{ github.sha }}
+          docker push iscampoos/multas-app-api:latest

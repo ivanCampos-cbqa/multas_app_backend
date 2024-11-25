@@ -1,6 +1,20 @@
 version: '3.8'
 
 services:
+  multas-app-api:
+    container_name: multas-app-api
+    image: iscampoos/multas-app-api:latest
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URL: ${MONGO_URL_DOCKER}
+      PORT: ${PORT}
+      MAIL_SECRET_KEY: ${MAIL_SECRET_KEY}
+      MAIL_SERVICE: ${MAIL_SERVICE}
+      MAIL_USER: ${MAIL_USER}
+      MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN}
   mongo:
     image: mongo
     container_name: mongo-multas-app
