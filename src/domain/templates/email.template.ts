@@ -21,22 +21,23 @@ export function generateFineEmailTemplate(
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color: #1c1c1c; /* Fondo gris oscuro */
-                color: #ccc; /* Texto gris claro */
+                background-color: #1c1c1c;
+                color: #ccc;
                 margin: 0;
                 padding: 0;
             }
             .container {
-                width: 100%;
-                max-width: 600px;
+                width: 90%;
+                max-width: 800px;
                 margin: 20px auto;
-                background-color: #2a2a2a; /* Fondo del contenedor más oscuro */
+                background-color: #2a2a2a;
+                border: 2px solid #6b4b3f; /* Borde color café */
                 border-radius: 8px;
-                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
                 overflow: hidden;
             }
             .header {
-                background-color: #6A0DAD; /* Color morado */
+                background-color: #6b4b3f; /* Color café */
                 color: #ffffff;
                 padding: 20px;
                 text-align: center;
@@ -46,11 +47,31 @@ export function generateFineEmailTemplate(
                 font-size: 26px;
             }
             .content {
+                display: flex;
+                flex-wrap: wrap;
                 padding: 20px;
             }
-            .content p {
+            .info {
+                flex: 1;
+                min-width: 300px;
+                padding-right: 10px;
+            }
+            .info p {
                 margin: 10px 0;
-                color: #ddd; /* Texto ligeramente más claro */
+                color: #ddd;
+            }
+            .map {
+                flex: 1;
+                min-width: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .map img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             }
             .footer {
                 background-color: #1c1c1c;
@@ -58,12 +79,6 @@ export function generateFineEmailTemplate(
                 padding: 10px;
                 text-align: center;
                 font-size: 12px;
-            }
-            .map-img {
-                width: 100%;
-                height: auto;
-                border-radius: 10px;
-                margin-top: 15px;
             }
         </style>
     </head>
@@ -73,16 +88,20 @@ export function generateFineEmailTemplate(
                 <h1>Fine Details</h1>
             </div>
             <div class="content">
-                <p><strong>New Fine Registered</strong></p>
-                <p><strong>Plate Number:</strong> ${plate}</p>
-                <p><strong>City:</strong> ${city}</p>
-                <p><strong>State:</strong> ${state}</p>
-                <p><strong>Registered Speed:</strong> ${speed}</p>
-                <p><strong>Speed Limit:</strong> ${limit}</p>
-                <p><strong>Date:</strong> ${creationDate.toDateString()}</p>
-                <p><strong>Latitud:</strong> ${lat}</p>
-                <p><strong>Longitud:</strong> ${lng}</p>
-                <img src="${mapboxURL}" alt="Map" class="map-img"/>
+                <div class="info">
+                    <p><strong>New Fine Registered</strong></p>
+                    <p><strong>Plate Number:</strong> ${plate}</p>
+                    <p><strong>City:</strong> ${city}</p>
+                    <p><strong>State:</strong> ${state}</p>
+                    <p><strong>Registered Speed:</strong> ${speed} km/h</p>
+                    <p><strong>Speed Limit:</strong> ${limit} km/h</p>
+                    <p><strong>Date:</strong> ${creationDate.toDateString()}</p>
+                    <p><strong>Latitude:</strong> ${lat}</p>
+                    <p><strong>Longitude:</strong> ${lng}</p>
+                </div>
+                <div class="map">
+                    <img src="${mapboxURL}" alt="Map">
+                </div>
             </div>
             <div class="footer">
                 <p>Este es un correo generado automáticamente. Por favor, no responda a este mensaje.</p>
@@ -90,12 +109,12 @@ export function generateFineEmailTemplate(
         </div>
     </body>
     </html>
-    `;
+  `;
 }
 
 export const generateMapboxStaticImageURL = (lat: number, lng: number) => {
   const accessToken = envs.MAPBOX_ACCESS_TOKEN;
-  const zoom = 10; // Nivel de zoom
+  const zoom = 14; // Mayor nivel de zoom
   const width = 800; // Ancho de la imagen
   const height = 500; // Altura de la imagen
 
